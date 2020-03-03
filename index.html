@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fusion Resizable AutoOrder</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <!-- Este ejemplo usa como libreria js jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <button id="aumentar">Aumentar contenedor</button>
+  <button id="disminuir">Disminuir contenedor</button>
+  <hr>
+  <div class='flexbox' id="flexbox">
+    <div class='resizable' id='resizable1'>
+      <div class='resizer'></div>
+      <div class='contenido'>
+        <p>Test 1</p>
+      </div>
+    </div>
+    <div class='resizable' id='resizable2'>
+      <div class='resizer'></div>
+      <div class='contenido'>
+        <p>Test 2</p>
+      </div>
+    </div>
+    <div class='resizable' id='resizable3'>
+      <div class='resizer'></div>
+      <div class='contenido'>
+        <p>Test 3</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="./dynamic.js"></script>
+  <script>
+    var flexbox = document.getElementById('flexbox');
+    var aumentar = document.getElementById('aumentar');
+
+    $(document).ready(function () {
+      makeResizableDiv('#resizable1');
+      makeResizableDiv('#resizable2');
+      makeResizableDiv('#resizable3');
+
+      fullOrder(flexbox);
+
+      $("#aumentar").on('click', function () {
+        setTimeout(() => { $('#flexbox').css({'width':'400px', 'transition':'width 0.5s'});fullOrder(flexbox);}, 900);
+      });
+      $("#disminuir").on('click', function () {
+        setTimeout(() => { $('#flexbox').css({'width':'300px', 'transition':'width 0.5s'});fullOrder(flexbox);}, 900);
+      });
+
+
+    });
+
+
+  </script>
+
+
+</body>
+
+</html>

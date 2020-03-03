@@ -1,0 +1,67 @@
+ .flexbox{
+    width: 300px;
+    height: auto;
+  
+    margin: auto;
+  
+    background-color:brown; 
+    
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+  
+  }
+  
+  .resizable {
+    margin: 5px;
+    padding: calc(1%);
+  
+    background: white;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    border: 3px solid #4286f4;
+    box-sizing: border-box;
+  }
+  
+  .resizable .resizer{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #4286f4;
+    position: absolute;
+    right: -6px;
+    bottom: -6px;
+    cursor: nwse-resize;
+  }
+  
+  .contenido{
+      overflow: hidden;
+      max-height: calc(98%);
+      border: 2px solid orange;
+  }
+
+  #resizable1{
+    width: 50px;
+    height: 50px;
+
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  #resizable2{
+    width: 100px;
+    height: 100px;
+
+    max-width: 70%;
+    max-height: 400px;
+  }
+
+  #resizable3{
+    width: 150px;
+    height: 150px;
+
+    max-width: 70%;
+    max-height: 400px;
+  }
